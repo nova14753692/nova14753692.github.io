@@ -4,7 +4,6 @@
   border-radius: 25px;
   height: auto;
   width: auto;
-  font-size: 24px;
   color: #d6d2d2;
   transition: all 0.3s ease-in-out;
 }
@@ -88,6 +87,27 @@
 
 .MainMenu [class*=col-] {
   padding: 0px;
+}
+
+@media (max-width: 768px) {
+  .MainMenu .bt-menu {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  .MainMenu .bt-menu {
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) {
+  .MainMenu .bt-menu {
+    font-size: 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .MainMenu .bt-menu {
+    font-size: 24px;
+  }
 }
 
 /*# sourceMappingURL=mainmenu.css.map */

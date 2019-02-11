@@ -24,25 +24,21 @@ $exp-group-anim-duration: 1s
 
 .About .perk
         margin-top: 2%
-        width: 60%
-        height: 27vh
+        align-content: center
         [class*="col"]
             display: flex
             align-items: center
             flex-direction: column
             color: $dark-text
-            font-size: 20px
 
 .About .img-perk
         border: 1px solid $dark-text
-        height: 6vw
-        width: 6vw
         margin: 5%
         border-radius: 25%
         animation: 2s ease-out 0s 1 flip
 
 .About .summary
-        width: 60%
+        width: 80%
         display: flex
         [class*="col"]
             flex-direction: column
@@ -50,18 +46,15 @@ $exp-group-anim-duration: 1s
 .About .introduction
         text-align: center
         color: $dark-text
+        align-items: center
         animation: $introduction-anim-duration ease-out 0s 1 slide-in-from-left2, 2s ease-out 0s 1 fade-in2
 
 .About .avatar
-        border: 1px solid $dark-text
-        min-width: 100px
-        min-height: 100px
-        height: 15vw
-        width: 15vw
-        margin: 5%
-        margin-left: 23%
-        margin-bottom: 0
-        border-radius: 25%
+	border: 1px solid $dark-text
+	min-width: 100px
+	min-height: 100px
+	margin-left: 30%
+	border-radius: 25%
 
 .About .exp-group
         animation: $exp-group-anim-duration ease-out 0s 1 slide-in-from-right, 2s ease-out 0s 1 fade-in2
@@ -138,6 +131,43 @@ $exp-group-anim-duration: 1s
 .About .blender-3d
         animation: 1s cubic-bezier(0.38,0.39,0.29,0.92) 1.5 + $exp-group-anim-duration 1 slide-progress-bar
         animation-fill-mode: forwards
+
+@media (max-width: 768px)
+    .About .perk
+        font-size: 12px
+        width: 100%
+    .About .img-perk
+        width: 12vh
+        height: 12vh
+
+@media (min-width: 768px)
+    .About .perk
+        font-size: 14px
+        width: 80%
+    .About .img-perk
+        width: 11vh
+        height: 11vh
+
+@media (min-width: 992px)
+    .About .perk
+        font-size: 18px
+        width: 70%
+    .About .img-perk
+        width: 10vh
+        height: 10vh
+
+@media (min-width: 1200px)
+    .About .perk
+        font-size: 20px
+        width: 60%
+    .About .img-perk
+        width: 10vh
+        height: 10vh
+
+@media (max-width: 768px)
+    .About .avatar
+        width: 25vw
+        height: 25vw
 
 @keyframes slide-progress-bar
     0%

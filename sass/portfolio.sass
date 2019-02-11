@@ -1,0 +1,96 @@
+@import value
+@import button1-sm
+
+.Portfolio
+    background-color: $normal-text
+    display: flex
+    min-height: 100vh
+    flex-direction: column
+    align-items: center
+
+.Portfolio h1
+    padding-top: $menu-height + 1vh
+    color: $dark-text
+    font-size: 3em
+
+.Portfolio .card-row
+    border: 2px solid black
+    margin-top: 2%
+
+.Portfolio .card-col
+    border: 2px solid black
+    width: 300px
+    height: 300px
+    padding: 0
+
+.Portfolio .card
+    height: 100%
+
+.Portfolio .card-body
+    display: flex
+    flex-direction: column
+    align-content: center
+    justify-content: center
+    position: absolute
+    opacity: 0
+
+.Portfolio .card-body:hover
+    animation: 0.5s ease-out 0s 1 slide-in-from-bottom, 0.5s ease-out 0s 1 fade-in
+    animation-fill-mode: forwards
+
+.Portfolio .card-body:not(:hover)
+    animation: 0.5s ease-out 0s 1 slide-in-from-top, 0.5s ease-out 0s 1 fade-out
+    animation-fill-mode: forwards
+
+.bt-learn-more
+    @extend %button1-sm-style
+
+.bt-learn-more:hover
+    @extend %button1-sm-style-hover
+    color: white
+
+.Portfolio .card-title
+    text-align: center
+    margin-bottom: 30%
+    margin-top: 5%
+
+.Portfolio .card-img-top
+    position: absolute
+
+.Portfolio .card-img-top:hover
+
+.Portfolio .header-underline
+    width: 20%
+    height: 4px
+    background-color: $comfort-red-text
+    animation: 1s ease-out 0s 1 slide-in-from-left, 1s ease-out 0s 1 fade-in
+
+@keyframes slide-in-from-bottom
+    0%
+        transform: translateY(20%)
+    100%
+        transform: translateY(0)
+
+@keyframes slide-in-from-top
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(20%)
+
+@keyframes slide-in-from-left
+    0%
+        transform: translateX(-100%)
+    100%
+        transform: translateX(0)
+
+@keyframes fade-in
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes fade-out
+    0%
+        opacity: 1
+    100%
+        opacity: 0

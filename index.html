@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="../public/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="./css/App.css">
+    <link rel="stylesheet" href="./css/welcomepage.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/mainmenu.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/selenarevenge.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/tether.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        scrollToElement = (blockId) => {
+            const page = document.getElementsByClassName(blockId)[0];
+            page.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+
+        submit = () => {
+            const guestName = document.getElementById('guest-name').value;
+            let guestMessage = document.getElementById('guest-message').value;
+            guestMessage = encodeURIComponent(guestMessage);
+            window.open('mailto:vincenttran147@gmail.com?subject=' + guestName + 
+            ' job request' + '&body=' + guestMessage);
+        }
+
+        randomRotateDeg = () => {
+            const deg = document.getElementsByClassName("img-perk");
+            const time = Math.random() * 160 + 70;
+            for (let index = 0; index < deg.length; index++) {
+                const element = deg[index];
+                element.style.setProperty('--rotateDeg', time + 'deg');
+            }
+    }
+    </script>
+    <title>Vincent's Personal Webpage</title>
+  </head>
+  <body onload="randomRotateDeg()">
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+    <div class="wrapper">
+      <div class="container-fluid" id="welcome-page">
+        <div>
+          <div class="WelcomePage">
+              <div class="welcome_block">
+                  <p class="welcome_line">
+                      Hello, I'm <span>Vincent Tran</span>
+                      <br/>I'm currently senior Computer Science student
+                  </p>
+                  <button type="button" class="bt bt-view-work" onclick="scrollToElement('Content')">
+                      View my works <span>🡺</span>
+                  </button>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="Content">
+        <div class="card sticky-top main-menu">
+          <div class="MainMenu">
+            <div class="row menu-row">
+                <div class="col-auto">
+                    <button class="bt-menu" onclick="scrollToElement('WelcomePage')"><a class="menu-text">HOME</a></button>
+                </div>
+                <div class="col-auto">
+                    <button class="bt-menu" onclick="scrollToElement('About')"><a class="menu-text">ABOUT</a>
+                </button></div>
+                <div class="col-auto">
+                    <button class="bt-menu" onclick="scrollToElement('Portfolio')"><a class="menu-text">PORTFOLIO</a>
+                </button></div>
+                <div class="col-auto">
+                    <button class="bt-menu" onclick="scrollToElement('Contact')"><a class="menu-text">CONTACT</a>
+                </button></div>
+            </div>
+          </div>
+        </div>
+        <div id="about">
+          <div class="About">
+            <h1>About</h1>
+            <div class="header-underline"></div>
+            <div class="row perk">
+                <div class="col">
+                    <img class="img-perk"></img>
+                    Fast-learner
+                </div>
+                <div class="col">
+                    <img class="img-perk"></img>
+                    Tech-savvy
+                </div>
+                <div class="col">
+                    <img class="img-perk"></img>
+                    Cooperative</div>
+                <div class="col">
+                    <img class="img-perk"></img>
+                    Good working ethic
+                </div>
+            </div>
+            <div class="row summary">
+                <div class="col-6">
+                    <div class="introduction">
+                        <div class="avatar"></div>
+                        <p style="margin: 2%; font-size: 24; font-weight: bold">Who's this guy?</p>
+                        <p style="margin: '2%'; font-size: 18">
+                        I'm a Computer Science student at University of Houston.<br/>
+                        Coding is my life, computer is my love, tech is my food, 
+                            and playing games and making games are my passion.</p>
+                    </div>
+                    
+                </div>
+                <div class="col-6 exp-group">
+                    <p style="text-align: center; font-size: 36">My experience</p>
+
+                    <div class="progress w-93 exp-level" style="height: 7%">
+                        <div class="progress-bar bg-beginner" role="progressbar" 
+                        style="width: 25%; font-size: 120%" 
+                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Beginner</div>
+
+                        <div class="progress-bar bg-intermediate" role="progressbar" 
+                        style="width: 25%; font-size: 120%" 
+                        aria-valuenow="50" aria-valuemin="25" aria-valuemax="50">Intermediate</div>
+
+                        <div class="progress-bar bg-proficient" role="progressbar" 
+                        style="width: 25%; font-size: 120%"
+                        aria-valuenow="75" aria-valuemin="50" aria-valuemax="100">Proficent</div>
+
+                        <div class="progress-bar bg-expert" role="progressbar" 
+                        style="width: 25%; font-size: 120%"
+                        aria-valuenow="100" aria-valuemin="75" aria-valuemax="100">Expert</div>
+                    </div>
+
+                    <div class="exp-progress-group">
+                        <div class="row">
+                            <div class="col-3 exp-name">C++</div>
+                            <div class="col-8" style="display: inline">
+                                <div class="progress w-100 c-plus-plus">
+                                    <div class="progress-bar bg-beginner" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-intermediate" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
+
+                                    <div class="progress-bar bg-proficient" role="progressbar" 
+                                    style="width: 5%"
+                                    aria-valuenow="55" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-expert" role="progressbar" 
+                                    style="width: 0%"
+                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-1 percentage">
+                                55%
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-3 exp-name">C#</div>
+                            <div class="col-8" style="display: inline">
+                                <div class="progress w-100 c-sharp">
+                                    <div class="progress-bar bg-beginner" role="progressbar" 
+                                    style="width: 25%" 
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-intermediate" role="progressbar" 
+                                    style="width: 25%" 
+                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
+
+                                    <div class="progress-bar bg-proficient" role="progressbar" 
+                                    style="width: 10%"
+                                    aria-valuenow="60" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-expert" role="progressbar" 
+                                    style="width: 0%"
+                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-1 percentage">
+                                60%
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-3 exp-name">Java</div>
+                            <div class="col-8" style="display: inline">
+                                <div class="progress w-100 java">
+                                    <div class="progress-bar bg-beginner" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-intermediate" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
+
+                                    <div class="progress-bar bg-proficient" role="progressbar" 
+                                    style="width: 15%"
+                                    aria-valuenow="65" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-expert" role="progressbar" 
+                                    style="width: 0%"
+                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-1 percentage">
+                                65%
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-3 exp-name">ReactJS</div>
+                            <div class="col-8" style="display: inline">
+                                <div class="progress w-100 reactjs">
+                                    <div class="progress-bar bg-beginner" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-intermediate" role="progressbar" 
+                                    style="width: 5%"
+                                    aria-valuenow="30" aria-valuemin="25" aria-valuemax="50"></div>
+
+                                    <div class="progress-bar bg-proficient" role="progressbar" 
+                                    style="width: 0%"
+                                    aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-expert" role="progressbar" 
+                                    style="width: 0%"
+                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-1 percentage">
+                                30%
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-3 exp-name">Android Studio</div>
+                            <div class="col-8" style="display: inline">
+                                <div class="progress w-100 android-studio">
+                                    <div class="progress-bar bg-beginner" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-intermediate" role="progressbar" 
+                                    style="width: 10%"
+                                    aria-valuenow="35" aria-valuemin="25" aria-valuemax="50"></div>
+
+                                    <div class="progress-bar bg-proficient" role="progressbar" 
+                                    style="width: 0%"
+                                    aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-expert" role="progressbar" 
+                                    style="width: 0%"
+                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-1 percentage">
+                                35%
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-3 exp-name">Unity Engine</div>
+                            <div class="col-8" style="display: inline">
+                                <div class="progress w-100 unity-engine">
+                                    <div class="progress-bar bg-beginner" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-intermediate" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
+
+                                    <div class="progress-bar bg-proficient" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="75" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-expert" role="progressbar" 
+                                    style="width: 10%"
+                                    aria-valuenow="85" aria-valuemin="75" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-1 percentage">
+                                85%
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-3 exp-name">Blender 3D</div>
+                            <div class="col-8" style="display: inline">
+                                <div class="progress w-100 blender-3d">
+                                    <div class="progress-bar bg-beginner" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-intermediate" role="progressbar" 
+                                    style="width: 25%"
+                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
+
+                                    <div class="progress-bar bg-proficient" role="progressbar" 
+                                    style="width: 0%"
+                                    aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                    <div class="progress-bar bg-expert" role="progressbar" 
+                                    style="width: 0%"
+                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-1 percentage">
+                                50%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="portfolio">
+          <div>
+            <div class="Portfolio">
+                <h1>Portfolio</h1>
+                <div class="header-underline"></div>
+                <div style="height: 100px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="Contact">
+            <h1>Contact</h1>
+            <div class="header-underline"></div>
+            <div class="row contact-content">
+                <div class="col-12">
+                    <form>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" id="guest-name"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Your message</label>
+                            <textarea class="form-control" rows="4" id="guest-message" wrap="hard" cols="2"></textarea>
+                        </div>
+                    </form>
+                    <button class="bt-sm bt-submit" onclick="submit()">
+                        Submit
+                    </button>
+                </div>
+            </div>
+            <div class="row row-close-content">
+                <div class="col-12">
+                    <button class="bt-sm bt-close-content" onclick="scrollToElement('WelcomePage')">
+                        <img src="./double-arrow-up-64.png")/>
+                    </button>
+                </div>
+            </div>
+            <div class="row end-folding">
+                <div class="col-12">
+                    
+                </div>
+            </div>
+        </div>    
+    </div>
+
+  </body>
+</html>

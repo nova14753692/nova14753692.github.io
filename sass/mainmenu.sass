@@ -1,0 +1,26 @@
+@import button-menu
+@import value
+
+.MainMenu
+    align-content: center
+    justify-content: center
+    display: flex
+    height: $menu-height
+    background-color: $dark-text
+
+.MainMenu .menu-row
+    width: auto
+
+.MainMenu [class*="col-"]
+    padding: 0px
+
+.MainMenu .bt-menu
+    @extend %button-menu-style
+    
+.MainMenu .bt-menu:hover
+    @extend %button-menu-style-hover
+    .menu-text:before
+        @extend %menu-text-hover-before
+
+.MainMenu .menu-text:before
+    @extend %menu-text-before

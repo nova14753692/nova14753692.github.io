@@ -17,9 +17,10 @@
     <script src="./js/tether.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script>
-        scrollToElement = (blockId) => {
-            const page = document.getElementsByClassName(blockId)[0];
+        scrollToElement = (blockClassName) => {
+            const page = document.getElementsByClassName(blockClassName)[0];
             page.scrollIntoView({behavior: 'smooth', block: 'start'});
+            reloadVisible(blockClassName);
         }
 
         submit = () => {
@@ -37,11 +38,31 @@
                 const element = deg[index];
                 element.style.setProperty('--rotateDeg', time + 'deg');
             }
-    }
+        }
+
+        checkVisible = (elm) => {
+            const rect = elm.getBoundingClientRect();
+            const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+            return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+        }
+
+        reloadVisible = (className) => {
+            setInterval(() => {
+                if (checkVisible(document.getElementsByClassName(className)[0])) {
+                    console.log('reload');
+                    location.reload();
+                    clearInterval();
+                }
+            }, 500);
+        }
+
+        onLoadFunction = () => {
+            randomRotateDeg();
+        }
     </script>
     <title>Vincent's Personal Webpage</title>
   </head>
-  <body onload="randomRotateDeg()">
+  <body onload="onLoadFunction()">
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>

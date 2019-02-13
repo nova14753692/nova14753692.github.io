@@ -191,6 +191,10 @@
   .About .summary {
     width: 100%;
   }
+
+  .About .exp-group-title {
+    font-size: 24px;
+  }
 }
 @media (min-width: 768px) {
   .About .perk {
@@ -214,6 +218,10 @@
 
   .About .summary {
     width: 100%;
+  }
+
+  .About .exp-group-title {
+    font-size: 32px;
   }
 }
 @media (min-width: 992px) {
@@ -239,6 +247,10 @@
   .About .summary {
     width: 80%;
   }
+
+  .About .exp-group-title {
+    font-size: 36px;
+  }
 }
 @media (min-width: 1200px) {
   .About .perk {
@@ -262,6 +274,10 @@
 
   .About .summary {
     width: 70%;
+  }
+
+  .About .exp-group-title {
+    font-size: 38px;
   }
 }
 @keyframes slide-progress-bar {

@@ -44,6 +44,10 @@
 .About .summary [class*=col] {
   flex-direction: column;
 }
+.About .summary .introduction-col {
+  margin: auto;
+  justify-items: center;
+}
 
 .About .introduction {
   margin-top: 30px;
@@ -195,6 +199,14 @@
   .About .exp-group-title {
     font-size: 24px;
   }
+
+  .About .summary .introduction-title {
+    font-size: 18px;
+  }
+
+  .About .summary .introduction-content {
+    font-size: 16px;
+  }
 }
 @media (min-width: 768px) {
   .About .perk {
@@ -222,6 +234,14 @@
 
   .About .exp-group-title {
     font-size: 32px;
+  }
+
+  .About .summary .introduction-title {
+    font-size: 22px;
+  }
+
+  .About .summary .introduction-content {
+    font-size: 18px;
   }
 }
 @media (min-width: 992px) {
@@ -251,6 +271,14 @@
   .About .exp-group-title {
     font-size: 36px;
   }
+
+  .About .summary .introduction-title {
+    font-size: 26px;
+  }
+
+  .About .summary .introduction-content {
+    font-size: 20px;
+  }
 }
 @media (min-width: 1200px) {
   .About .perk {
@@ -278,6 +306,14 @@
 
   .About .exp-group-title {
     font-size: 38px;
+  }
+
+  .About .summary .introduction-title {
+    font-size: 30px;
+  }
+
+  .About .summary .introduction-content {
+    font-size: 22px;
   }
 }
 @keyframes slide-progress-bar {

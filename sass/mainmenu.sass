@@ -13,9 +13,12 @@
 
 .MainMenu [class*="col-"]
     padding: 0px
+    display: flex
 
 .MainMenu .bt-menu
     @extend %button-menu-style
+    justify-self: center
+    margin: auto
     
 .MainMenu .bt-menu:hover
     @extend %button-menu-style-hover
@@ -27,7 +30,7 @@
 
 @media (max-width: 768px)
     .MainMenu .bt-menu
-        font-size: 14px
+        font-size: 16px
   
 @media (min-width: 768px)
     .MainMenu .bt-menu
@@ -35,7 +38,7 @@
   
 @media (min-width: 992px)
     .MainMenu .bt-menu
-        font-size: 10px
+        font-size: 20px
   
 @media (min-width: 1200px)
     .MainMenu .bt-menu

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="../public/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,18 +18,18 @@
     <script src="./js/tether.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script>
-        scrollToElement = (blockClassName) => {
+        scrollToElement = (blockClassName, reload) => {
             const page = document.getElementsByClassName(blockClassName)[0];
-            page.scrollIntoView({behavior: 'smooth', block: 'start'});
-            reloadVisible(blockClassName);
+            page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (reload) reloadVisible(blockClassName);
         }
 
         submit = () => {
             const guestName = document.getElementById('guest-name').value;
             let guestMessage = document.getElementById('guest-message').value;
             guestMessage = encodeURIComponent(guestMessage);
-            window.open('mailto:vincenttran147@gmail.com?subject=' + guestName + 
-            ' job request' + '&body=' + guestMessage);
+            window.open('mailto:vincenttran147@gmail.com?subject=' + guestName +
+                ' job request' + '&body=' + guestMessage);
         }
 
         randomRotateDeg = () => {
@@ -61,10 +62,11 @@
         }
     </script>
     <title>Vincent's Personal Webpage</title>
-  </head>
-  <body onload="onLoadFunction()">
+</head>
+
+<body onload="onLoadFunction()">
     <noscript>
-      You need to enable JavaScript to run this app.
+        You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
     <!--
@@ -79,325 +81,496 @@
     -->
 
     <div class="wrapper">
-      <div class="container-fluid" id="welcome-page">
-        <div>
-          <div class="WelcomePage">
-              <div class="welcome_block">
-                  <p class="welcome_line">
-                      Hello, I'm <span>Vincent Tran</span>
-                      <br/>I'm currently senior Computer Science student
-                  </p>
-                  <button type="button" class="bt bt-view-work" onclick="scrollToElement('Content')">
-                      View my works <span>🡺</span>
-                  </button>
-              </div>
-          </div>
-        </div>
-      </div>
-      <div class="Content">
-        <div class="card sticky-top main-menu">
-          <div class="MainMenu">
-            <div class="row menu-row">
-                <div class="col-auto">
-                    <button class="bt-menu" onclick="scrollToElement('WelcomePage')"><a class="menu-text">HOME</a></button>
-                </div>
-                <div class="col-auto">
-                    <button class="bt-menu" onclick="scrollToElement('About')"><a class="menu-text">ABOUT</a>
-                </button></div>
-                <div class="col-auto">
-                    <button class="bt-menu" onclick="scrollToElement('Portfolio')"><a class="menu-text">PORTFOLIO</a>
-                </button></div>
-                <div class="col-auto">
-                    <button class="bt-menu" onclick="scrollToElement('Contact')"><a class="menu-text">CONTACT</a>
-                </button></div>
-            </div>
-          </div>
-        </div>
-        <div id="about">
-          <div class="About">
-            <h1 class="row">About</h1>
-            <div class="row header-underline"></div>
-            <div class="row perk">
-                <div class="col-md-3">
-                    <img class="img-perk"></img>
-                    <p>Fast-learner</p>
-                </div>
-                <div class="col-md-3">
-                    <img class="img-perk"></img>
-                    <p>Tech-savvy</p>
-                </div>
-                <div class="col-md-3">
-                    <img class="img-perk"></img>
-                    <p>Cooperative</p>
-                </div>
-                <div class="col-md-3">
-                    <img class="img-perk"></img>
-                    <p>Good working ethic</p>
-                </div>
-            </div>
-            <div class="row summary">
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="introduction">
-                        <div class="avatar"></div>
-                        <p style="margin-top: 20px; font-size: 24; font-weight: bold">Who's this guy?</p>
-                        <p style="margin-top: 10px; font-size: 18">
-                        I'm a Computer Science student at University of Houston.<br/>
-                        Coding is my life, computer is my love, tech is my food, 
-                            and playing games and making games are my passion.</p>
-                    </div>
-                    
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 exp-group">
-                    <p style="text-align: center; font-size: 36">My experience</p>
-
-                    <div class="progress exp-level" style="height: 7%; margin: 0">
-                        <div class="progress-bar bg-beginner" role="progressbar" 
-                        style="width: 25%; font-size: 120%" 
-                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Beginner</div>
-
-                        <div class="progress-bar bg-intermediate" role="progressbar" 
-                        style="width: 25%; font-size: 120%" 
-                        aria-valuenow="50" aria-valuemin="25" aria-valuemax="50">Intermediate</div>
-
-                        <div class="progress-bar bg-proficient" role="progressbar" 
-                        style="width: 25%; font-size: 120%"
-                        aria-valuenow="75" aria-valuemin="50" aria-valuemax="100">Proficent</div>
-
-                        <div class="progress-bar bg-expert" role="progressbar" 
-                        style="width: 25%; font-size: 120%"
-                        aria-valuenow="100" aria-valuemin="75" aria-valuemax="100">Expert</div>
-                    </div>
-
-                    <div class="exp-progress-group">
-                        <div class="row">
-                            <div class="col-3 exp-name">C++</div>
-                            <div class="col-8" style="display: inline">
-                                <div class="progress c-plus-plus">
-                                    <div class="progress-bar bg-beginner" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-intermediate" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
-
-                                    <div class="progress-bar bg-proficient" role="progressbar" 
-                                    style="width: 5%"
-                                    aria-valuenow="55" aria-valuemin="50" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-expert" role="progressbar" 
-                                    style="width: 0%"
-                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="col-1 percentage">
-                                <p>55%</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-3 exp-name">C#</div>
-                            <div class="col-8" style="display: inline">
-                                <div class="progress c-sharp">
-                                    <div class="progress-bar bg-beginner" role="progressbar" 
-                                    style="width: 25%" 
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-intermediate" role="progressbar" 
-                                    style="width: 25%" 
-                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
-
-                                    <div class="progress-bar bg-proficient" role="progressbar" 
-                                    style="width: 10%"
-                                    aria-valuenow="60" aria-valuemin="50" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-expert" role="progressbar" 
-                                    style="width: 0%"
-                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="col-1 percentage">
-                                <p>60%</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-3 exp-name">Java</div>
-                            <div class="col-8" style="display: inline">
-                                <div class="progress java">
-                                    <div class="progress-bar bg-beginner" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-intermediate" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
-
-                                    <div class="progress-bar bg-proficient" role="progressbar" 
-                                    style="width: 15%"
-                                    aria-valuenow="65" aria-valuemin="50" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-expert" role="progressbar" 
-                                    style="width: 0%"
-                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="col-1 percentage">
-                                <p>65%</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-3 exp-name">ReactJS</div>
-                            <div class="col-8" style="display: inline">
-                                <div class="progress reactjs">
-                                    <div class="progress-bar bg-beginner" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-intermediate" role="progressbar" 
-                                    style="width: 5%"
-                                    aria-valuenow="30" aria-valuemin="25" aria-valuemax="50"></div>
-
-                                    <div class="progress-bar bg-proficient" role="progressbar" 
-                                    style="width: 0%"
-                                    aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-expert" role="progressbar" 
-                                    style="width: 0%"
-                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="col-1 percentage">
-                                <p>30%</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-3 exp-name">Android Studio</div>
-                            <div class="col-8" style="display: inline">
-                                <div class="progress android-studio">
-                                    <div class="progress-bar bg-beginner" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-intermediate" role="progressbar" 
-                                    style="width: 10%"
-                                    aria-valuenow="35" aria-valuemin="25" aria-valuemax="50"></div>
-
-                                    <div class="progress-bar bg-proficient" role="progressbar" 
-                                    style="width: 0%"
-                                    aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-expert" role="progressbar" 
-                                    style="width: 0%"
-                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="col-1 percentage">
-                                <p>35%</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-3 exp-name">Unity Engine</div>
-                            <div class="col-8" style="display: inline">
-                                <div class="progress unity-engine">
-                                    <div class="progress-bar bg-beginner" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-intermediate" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
-
-                                    <div class="progress-bar bg-proficient" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="75" aria-valuemin="50" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-expert" role="progressbar" 
-                                    style="width: 10%"
-                                    aria-valuenow="85" aria-valuemin="75" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="col-1 percentage">
-                                <p>85%</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-3 exp-name">Blender 3D</div>
-                            <div class="col-8" style="display: inline">
-                                <div class="progress blender-3d">
-                                    <div class="progress-bar bg-beginner" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-intermediate" role="progressbar" 
-                                    style="width: 25%"
-                                    aria-valuenow="50" aria-valuemin="25" aria-valuemax="50"></div>
-
-                                    <div class="progress-bar bg-proficient" role="progressbar" 
-                                    style="width: 0%"
-                                    aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
-
-                                    <div class="progress-bar bg-expert" role="progressbar" 
-                                    style="width: 0%"
-                                    aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="col-1 percentage">
-                                <p>50%</p>
-                            </div>
-                        </div>
+        <div class="container-fluid" id="welcome-page">
+            <div>
+                <div class="WelcomePage">
+                    <div class="welcome_block">
+                        <p class="welcome_line">
+                            Hello, I'm <span>Vincent Tran</span>
+                            <br />I'm currently senior Computer Science student
+                        </p>
+                        <button type="button" class="bt bt-view-work" onclick="scrollToElement('Content', false)">
+                            View my works <span>🡺</span>
+                        </button>
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-        <div id="portfolio">
-          <div>
-            <div class="Portfolio">
-                <h1>Portfolio</h1>
+        <div class="Content">
+            <div class="card sticky-top main-menu">
+                <div class="MainMenu">
+                    <div class="row menu-row">
+                        <div class="col-auto">
+                            <button class="bt-menu" onclick="scrollToElement('WelcomePage', true)"><a
+                                    class="menu-text">HOME</a></button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="bt-menu" onclick="scrollToElement('About', true)"><a
+                                    class="menu-text">ABOUT</a>
+                            </button></div>
+                        <div class="col-auto">
+                            <button class="bt-menu" onclick="scrollToElement('Portfolio', true)"><a
+                                    class="menu-text">PORTFOLIO</a>
+                            </button></div>
+                        <div class="col-auto">
+                            <button class="bt-menu" onclick="scrollToElement('Contact', true)"><a
+                                    class="menu-text">CONTACT</a>
+                            </button></div>
+                    </div>
+                </div>
+            </div>
+            <div id="about">
+                <div class="About">
+                    <h1 class="row">About</h1>
+                    <div class="row header-underline"></div>
+                    <div class="row perk">
+                        <div class="col-md-3">
+                            <img class="img-perk"></img>
+                            <p>Fast-learner</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img class="img-perk"></img>
+                            <p>Tech-savvy</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img class="img-perk"></img>
+                            <p>Cooperative</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img class="img-perk"></img>
+                            <p>Good working ethic</p>
+                        </div>
+                    </div>
+                    <div class="row summary">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="introduction">
+                                <div class="avatar"></div>
+                                <p style="margin-top: 20px; font-size: 24; font-weight: bold">Who's this guy?</p>
+                                <p style="margin-top: 10px; font-size: 18">
+                                    I'm a Computer Science student at University of Houston.<br />
+                                    Coding is my life, computer is my love, tech is my food,
+                                    and playing games and making games are my passion.</p>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 exp-group">
+                            <p style="text-align: center; font-size: 36">My experience</p>
+
+                            <div class="progress exp-level" style="height: 7%; margin: 0">
+                                <div class="progress-bar bg-beginner" role="progressbar"
+                                    style="width: 25%; font-size: 120%" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100">Beginner</div>
+
+                                <div class="progress-bar bg-intermediate" role="progressbar"
+                                    style="width: 25%; font-size: 120%" aria-valuenow="50" aria-valuemin="25"
+                                    aria-valuemax="50">Intermediate</div>
+
+                                <div class="progress-bar bg-proficient" role="progressbar"
+                                    style="width: 25%; font-size: 120%" aria-valuenow="75" aria-valuemin="50"
+                                    aria-valuemax="100">Proficent</div>
+
+                                <div class="progress-bar bg-expert" role="progressbar"
+                                    style="width: 25%; font-size: 120%" aria-valuenow="100" aria-valuemin="75"
+                                    aria-valuemax="100">Expert</div>
+                            </div>
+
+                            <div class="exp-progress-group">
+                                <div class="row">
+                                    <div class="col-4 exp-name">C++</div>
+                                    <div class="col-7" style="display: inline">
+                                        <div class="progress c-plus-plus">
+                                            <div class="progress-bar bg-beginner" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-intermediate" role="progressbar"
+                                                style="width: 25%" aria-valuenow="50" aria-valuemin="25"
+                                                aria-valuemax="50"></div>
+
+                                            <div class="progress-bar bg-proficient" role="progressbar"
+                                                style="width: 10%" aria-valuenow="55" aria-valuemin="50"
+                                                aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-expert" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 percentage">
+                                        <p>60%</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 exp-name">C#</div>
+                                    <div class="col-7" style="display: inline">
+                                        <div class="progress c-sharp">
+                                            <div class="progress-bar bg-beginner" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-intermediate" role="progressbar"
+                                                style="width: 25%" aria-valuenow="50" aria-valuemin="25"
+                                                aria-valuemax="50"></div>
+
+                                            <div class="progress-bar bg-proficient" role="progressbar"
+                                                style="width: 10%" aria-valuenow="60" aria-valuemin="50"
+                                                aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-expert" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 percentage">
+                                        <p>60%</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 exp-name">Java</div>
+                                    <div class="col-7" style="display: inline">
+                                        <div class="progress java">
+                                            <div class="progress-bar bg-beginner" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-intermediate" role="progressbar"
+                                                style="width: 25%" aria-valuenow="50" aria-valuemin="25"
+                                                aria-valuemax="50"></div>
+
+                                            <div class="progress-bar bg-proficient" role="progressbar"
+                                                style="width: 15%" aria-valuenow="65" aria-valuemin="50"
+                                                aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-expert" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 percentage">
+                                        <p>65%</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 exp-name">Dart</div>
+                                    <div class="col-7" style="display: inline">
+                                        <div class="progress dart">
+                                            <div class="progress-bar bg-beginner" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-intermediate" role="progressbar"
+                                                style="width: 10%" aria-valuenow="50" aria-valuemin="25"
+                                                aria-valuemax="50"></div>
+
+                                            <div class="progress-bar bg-proficient" role="progressbar" style="width: 0%"
+                                                aria-valuenow="65" aria-valuemin="50" aria-valuemax="0"></div>
+
+                                            <div class="progress-bar bg-expert" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 percentage">
+                                        <p>35%</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 exp-name">ReactJS</div>
+                                    <div class="col-7" style="display: inline">
+                                        <div class="progress reactjs">
+                                            <div class="progress-bar bg-beginner" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-intermediate" role="progressbar"
+                                                style="width: 5%" aria-valuenow="30" aria-valuemin="25"
+                                                aria-valuemax="50"></div>
+
+                                            <div class="progress-bar bg-proficient" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-expert" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 percentage">
+                                        <p>30%</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 exp-name">Android Native</div>
+                                    <div class="col-7" style="display: inline">
+                                        <div class="progress android-native">
+                                            <div class="progress-bar bg-beginner" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-intermediate" role="progressbar"
+                                                style="width: 20%" aria-valuenow="35" aria-valuemin="25"
+                                                aria-valuemax="50"></div>
+
+                                            <div class="progress-bar bg-proficient" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-expert" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 percentage">
+                                        <p>45%</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 exp-name">Unity Engine</div>
+                                    <div class="col-7" style="display: inline">
+                                        <div class="progress unity-engine">
+                                            <div class="progress-bar bg-beginner" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-intermediate" role="progressbar"
+                                                style="width: 25%" aria-valuenow="50" aria-valuemin="25"
+                                                aria-valuemax="50"></div>
+
+                                            <div class="progress-bar bg-proficient" role="progressbar"
+                                                style="width: 25%" aria-valuenow="75" aria-valuemin="50"
+                                                aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-expert" role="progressbar" style="width: 10%"
+                                                aria-valuenow="85" aria-valuemin="75" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 percentage">
+                                        <p>85%</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 exp-name">Blender 3D</div>
+                                    <div class="col-7" style="display: inline">
+                                        <div class="progress blender-3d">
+                                            <div class="progress-bar bg-beginner" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-intermediate" role="progressbar"
+                                                style="width: 25%" aria-valuenow="50" aria-valuemin="25"
+                                                aria-valuemax="50"></div>
+
+                                            <div class="progress-bar bg-proficient" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-expert" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 percentage">
+                                        <p>50%</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 exp-name">Flutter Android/iOS</div>
+                                    <div class="col-7" style="display: inline">
+                                        <div class="progress flutter">
+                                            <div class="progress-bar bg-beginner" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-intermediate" role="progressbar"
+                                                style="width: 25%" aria-valuenow="50" aria-valuemin="25"
+                                                aria-valuemax="50"></div>
+
+                                            <div class="progress-bar bg-proficient" role="progressbar"
+                                                style="width: 15%" aria-valuenow="65" aria-valuemin="50"
+                                                aria-valuemax="100"></div>
+
+                                            <div class="progress-bar bg-expert" role="progressbar" style="width: 0%"
+                                                aria-valuenow="0" aria-valuemin="75" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 percentage">
+                                        <p>65%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="portfolio">
+                <div>
+                    <div class="Portfolio">
+                        <h1>Portfolio</h1>
+                        <div class="header-underline"></div>
+                        <div style="height: 50px"></div>
+                        <h2 style="color: #ff546b">Game Development Project</h2>
+                        <div style="height: 50px"></div>
+                        <h2>Selena's Revenge</h2>
+                        <div class=portfolio-content>
+                            <p>
+                                This is an RPG game made with Unity, where player controls a character named
+                                Selena to help her find out her father whereabout and eventually save the world.
+                            </p>
+                            <p>
+                                My team, including me and 3 other members, made this project as an class project for
+                                Game Development class
+                                within 3 months, in our school. I had other Unity projects but this is my most completed
+                                and feature rich game project so far.
+                            </p>
+                            <p>
+                                As the time of making this game, I had 2 years of Unity experience as a hobbyist, the
+                                rest of my team were
+                                just get started to know Unity, so it was easy task to convince them to vote for me to
+                                be their team lead. :D
+                            </p>
+                            <p>
+                                However, they learned incredibly fast, and that was a good thing, we needed all the
+                                talents for this project,
+                                and I also learned a lot from them.
+                            </p>
+                            <p>
+                                Over the process of making this game, we encoutered many problems arised such as the
+                                lacking of 3d artist,
+                                even when we had 3d models, there also some problems to intergrate animations and have
+                                them play smoothly,
+                                there were also programming design problems, so there were times when we had to rollback
+                                some commits or features
+                                with the help of git and github, and re-designed our code structures as well as business
+                                logic.
+                                In addition to that, when the deadline was near, there came optimization issues. We
+                                needed to have our game run on low-end
+                                devices also. We did alot of things to optimized the game including code refactor,
+                                adjusted lightning rendering, and
+                                made up a lazy engine to only play animations, render graphic, and run code when the
+                                objects within some distance.
+                                'Optimization was a huge effort to double the framerates or even triple the framerates
+                                on high-end devices.
+                            </p>
+                            <p>
+                                Finally, after all the effort, the result was great. Our game was the top compare to
+                                many other teams in class
+                                in term of techniques use in development and gameplay.
+                            </p>
+                            <p>
+                                Below is a video to showcase the game
+                            </p>
+                            <iframe width="90%" height="315" src="https://www.youtube.com/embed/eJi6MIPS4YA"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+
+                        <h2 style="color: #ff546b">Mobile Application Project</h2>
+                        <div style="height: 50px"></div>
+                        <h2>Discord Clone App</h2>
+                        <div class=portfolio-content>
+                            <p>
+                                The app has core functions of Discord, user can register for an account, login, add
+                                friends, and start a direct message chat.
+                                Registering account, authentication, login, chat, and other online features ultilize
+                                Google Firebase.
+                                This is my first attempts on Native Android development with Java. It took me about a
+                                week to build this app.
+                                The app hasn't fully completed yet. However, it's already a good start consider I just
+                                get started.
+                            </p>
+                            <p>
+                                Below is a video to showcase the app:
+                            </p>
+                            <iframe width="90%" height="315" src="https://www.youtube.com/embed/kM88kBGXZsU"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+
+                        <h2>Online Shopping App</h2>
+                        <div class=portfolio-content>
+                            <p>
+                                The app is a craglist-like online shopping app, where user can upload picture of their
+                                product, post a price, description,
+                                and their location.
+                                This time, I look into something really interesting, Flutter framework for
+                                cross-platform mobile app
+                                development using Dart as programming language.
+                            </p>
+                            <p>
+                                A bit about Flutter, it is a cross-platform framework to develop app for both Android
+                                and iOS. Flutter is introduced by Google
+                                around 2 years ago, and current has release version 1. It also has a lot of traction in
+                                mobile app development community.
+                                Flutter is very easy to learn, and has trememdously fast development speed, even faster
+                                when compare to React Native.
+                                When talking about faster than React Native, Flutter's performance theoretically
+                                extremely close to native code,
+                                because instead of maintaining a JavaScript Bridge like React Native, Flutter app
+                                compile directly to C/C++ library.
+                                For UI Flutter doesn't compile to native UI elements like React Native, it provides
+                                proprietary UI widgets that then will be drawn
+                                directly to the screen by using Skia graphic engine (the same engine used by Google
+                                Chrome). Flutter app will look and feel
+                                the same no matter what device user is using, or what OS version the device is running.
+                            </p>
+                            <p>
+                                I made this app within about a week by following a Udemy course. The app involves many
+                                technologies and API from Google Firebase, Google Cloud Storage,
+                                and Google Geo-location.
+                            </p>
+                            <p>
+                                I used Google Firebase to handle account registering, login, authentication, and
+                                interaction between the app and server.
+                                Google Cloud Storage is used to store products' pictures and Google Geo-location is used
+                                to get user exact location,
+                                then show a static map using Google Geo-location API. Users can either enter their
+                                address, then the app will correct it using
+                                Google Geo-location or they can just let the app detect their location.
+                            </p>
+                            <p>
+                                Below is a video to showcase the app
+                            </p>
+                            <iframe width="90%" height="315" src="https://www.youtube.com/embed/6X1ZBi6tGYg"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+
+                        <h2>Personal Portfolio Mobile App Version</h2>
+                        <div class=portfolio-content>
+                            <p>
+                                The app was developed by using Flutter framework, to showcase my works and introduction
+                                about myself as a developer
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Contact">
+                <h1>Contact</h1>
                 <div class="header-underline"></div>
-                <div style="height: 100px"></div>
+                <div class="row contact-content">
+                    <div class="col-12">
+                        <form>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" id="guest-name" />
+                            </div>
+                            <div class="form-group">
+                                <label>Your message</label>
+                                <textarea class="form-control" rows="4" id="guest-message" wrap="hard"
+                                    cols="2"></textarea>
+                            </div>
+                        </form>
+                        <button class="bt-sm bt-submit" onclick="submit()">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <div class="row row-close-content">
+                    <div class="col-12">
+                        <button class="bt-sm bt-close-content" onclick="scrollToElement('WelcomePage')">
+                            <img src="./double-arrow-up-64.png" ) />
+                        </button>
+                    </div>
+                </div>
+                <div class="row end-folding">
+                    <div class="col-12"></div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="Contact">
-            <h1>Contact</h1>
-            <div class="header-underline"></div>
-            <div class="row contact-content">
-                <div class="col-12">
-                    <form>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" id="guest-name"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Your message</label>
-                            <textarea class="form-control" rows="4" id="guest-message" wrap="hard" cols="2"></textarea>
-                        </div>
-                    </form>
-                    <button class="bt-sm bt-submit" onclick="submit()">
-                        Submit
-                    </button>
-                </div>
-            </div>
-            <div class="row row-close-content">
-                <div class="col-12">
-                    <button class="bt-sm bt-close-content" onclick="scrollToElement('WelcomePage')">
-                        <img src="./double-arrow-up-64.png")/>
-                    </button>
-                </div>
-            </div>
-            <div class="row end-folding">
-                <div class="col-12">
-                    
-                </div>
-            </div>
-        </div>    
-    </div>
 
-  </body>
+</body>
+
 </html>

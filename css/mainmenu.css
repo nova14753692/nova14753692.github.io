@@ -87,11 +87,17 @@
 
 .MainMenu [class*=col-] {
   padding: 0px;
+  display: flex;
+}
+
+.MainMenu .bt-menu {
+  justify-self: center;
+  margin: auto;
 }
 
 @media (max-width: 768px) {
   .MainMenu .bt-menu {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media (min-width: 768px) {
@@ -101,7 +107,7 @@
 }
 @media (min-width: 992px) {
   .MainMenu .bt-menu {
-    font-size: 10px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1200px) {

@@ -138,29 +138,39 @@
   animation-fill-mode: forwards;
 }
 
-.About .reactjs {
+.About .dart {
   animation: 1s cubic-bezier(0.38, 0.39, 0.29, 0.92) 1.75s 1 slide-progress-bar;
   animation-fill-mode: forwards;
 }
 
-.About .android-studio {
+.About .reactjs {
   animation: 1s cubic-bezier(0.38, 0.39, 0.29, 0.92) 2s 1 slide-progress-bar;
   animation-fill-mode: forwards;
 }
 
-.About .unity-engine {
+.About .android-native {
   animation: 1s cubic-bezier(0.38, 0.39, 0.29, 0.92) 2.25s 1 slide-progress-bar;
   animation-fill-mode: forwards;
 }
 
-.About .blender-3d {
+.About .unity-engine {
   animation: 1s cubic-bezier(0.38, 0.39, 0.29, 0.92) 2.5s 1 slide-progress-bar;
+  animation-fill-mode: forwards;
+}
+
+.About .blender-3d {
+  animation: 1s cubic-bezier(0.38, 0.39, 0.29, 0.92) 2.75s 1 slide-progress-bar;
+  animation-fill-mode: forwards;
+}
+
+.About .flutter {
+  animation: 1s cubic-bezier(0.38, 0.39, 0.29, 0.92) 3s 1 slide-progress-bar;
   animation-fill-mode: forwards;
 }
 
 @media (max-width: 768px) {
   .About .perk {
-    font-size: 20px;
+    font-size: 16px;
     width: 100%;
   }
 
@@ -184,13 +194,13 @@
 }
 @media (min-width: 768px) {
   .About .perk {
-    font-size: 24px;
+    font-size: 20px;
     width: 80%;
   }
 
   .About .img-perk {
-    width: 11vh;
-    height: 11vh;
+    width: 10vh;
+    height: 10vh;
   }
 
   .About .avatar {
@@ -208,13 +218,13 @@
 }
 @media (min-width: 992px) {
   .About .perk {
-    font-size: 28px;
+    font-size: 24px;
     width: 70%;
   }
 
   .About .img-perk {
-    width: 10vh;
-    height: 10vh;
+    width: 8vh;
+    height: 8vh;
   }
 
   .About .avatar {
@@ -232,7 +242,7 @@
 }
 @media (min-width: 1200px) {
   .About .perk {
-    font-size: 32px;
+    font-size: 28px;
     width: 60%;
   }
 
